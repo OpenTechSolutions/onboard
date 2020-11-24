@@ -5,7 +5,7 @@
         <div class="relative flex items-center justify-between h-16">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <!-- Mobile menu button-->
-            <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false" @click="openMenu">
+            <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false" @click="toggle = !toggle">
               <span class="sr-only">Open main menu</span>
               <!-- Icon when menu is closed. -->
               <!--
@@ -47,7 +47,7 @@
 
         Menu open: "block", Menu closed: "hidden"
       -->
-      <div class="hidden sm:hidden">
+      <div v-show='toggle'>
         <div class="px-2 pt-2 pb-3 space-y-1">
           <router-link to="/" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Home</router-link>
           <router-link to="/about"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">About-Projects</router-link>
@@ -61,9 +61,9 @@
 <script>
 export default {
   name: 'Nav',
-  methods: {
-    openMenu () {
-      console.log('open')
+  data () {
+    return {
+      toggle: false
     }
   }
 }
