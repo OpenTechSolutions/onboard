@@ -32,7 +32,7 @@
           <td class="border">{{comment.email}}</td>
           <td class="border" id="">{{comment.body}}</td>
           <td class="border">
-            <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" @click="haveRead">Viewed</button>
+            <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 cursor-pointer" @click="haveRead(comment.id)">Viewed</button>
           </td>
           </tr>
       </tbody>
@@ -58,8 +58,8 @@ export default {
     }
   },
   methods: {
-    haveRead () {
-      console.log('1234')
+    haveRead: function (id) {
+      this.comments = this.comments.filter(comment => comment.id !== id)
     }
   },
   created () {
