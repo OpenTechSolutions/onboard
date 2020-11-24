@@ -17,6 +17,9 @@
           <th class="border">
             Body
           </th>
+          <th class="border w-36">
+          Action
+          </th>
         </tr>
       </thead>
       <tbody v-for="comment in filterComments" v-bind:key="comment.id">
@@ -24,6 +27,9 @@
           <td class="border">{{comment.name}}</td>
           <td class="border">{{comment.email}}</td>
           <td class="border" id="">{{comment.body}}</td>
+          <td class="border">
+            <router-link to='' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Read More</router-link>
+          </td>
           </tr>
       </tbody>
     </table>
