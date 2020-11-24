@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <Hero v-bind:title="title" id="bgImg" />
+    <Hero id="bgImg" />
     <div class="container m-auto my-10">
     <project-card v-bind:projects="projects"/>
     </div>
@@ -20,7 +20,6 @@ export default {
   },
   data () {
     return {
-      title: 'Maurice Project About Page',
       projects: []
     }
   },

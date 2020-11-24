@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Hero v-bind:titles="titles" id="bgImg" />
+    <Hero id="bgImg" />
     <div class="container m-auto p-5 bg-gray-700">
       <input type="text" placeholder="Search Name... " v-model="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
     </div>
@@ -8,6 +8,9 @@
     <table class="table-auto border">
       <thead>
         <tr>
+          <th class="border p-3">
+            No
+          </th>
           <th class="border p-3">
             Name
           </th>
@@ -17,13 +20,20 @@
           <th class="border">
             Body
           </th>
+          <th class="border w-20">
+            Action
+          </th>
         </tr>
       </thead>
       <tbody v-for="comment in filterComments" v-bind:key="comment.id">
           <tr>
+          <td class="border">{{comment.id}}</td>
           <td class="border">{{comment.name}}</td>
           <td class="border">{{comment.email}}</td>
           <td class="border" id="">{{comment.body}}</td>
+          <td class="border">
+            <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" @click="haveRead">Viewed</button>
+          </td>
           </tr>
       </tbody>
     </table>
@@ -43,9 +53,13 @@ export default {
   },
   data () {
     return {
-      titles: 'Maurice Project Landing Page',
       comments: [],
       search: ''
+    }
+  },
+  methods: {
+    haveRead () {
+      console.log('1234')
     }
   },
   created () {

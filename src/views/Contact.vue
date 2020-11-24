@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero v-bind:title="title" id="bgImg" />
+    <Hero id="bgImg" />
     <ContactForm />
   </div>
 </template>
@@ -14,11 +14,6 @@ export default {
   components: {
     Hero,
     ContactForm
-  },
-  data () {
-    return {
-      title: 'Maurice Project Contact Page'
-    }
   }
 }
 </script>
