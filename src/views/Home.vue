@@ -2,7 +2,7 @@
   <div class="home">
     <Hero v-bind:title="title" />
     <div class="container m-auto p-5 bg-gray-700">
-      <input type="text" placeholder="Enter Search... " class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+      <input type="text" placeholder="Enter Search... " v-model="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
     </div>
     <div class="container m-auto my-10">
     <table class="table-auto border">
@@ -19,7 +19,7 @@
           </th>
         </tr>
       </thead>
-      <tbody v-for="comment in comments" v-bind:key="comment.id">
+      <tbody v-for="comment in filterComments" v-bind:key="comment.id">
           <tr>
           <td class="border">{{comment.name}}</td>
           <td class="border">{{comment.email}}</td>
@@ -44,12 +44,20 @@ export default {
   data () {
     return {
       title: 'Maurice Project Landing Page',
-      comments: []
+      comments: [],
+      search: ''
     }
   },
   created () {
     axios.get('https://jsonplaceholder.typicode.com/comments?_limit=10')
       .then(response => (this.comments = response.data))
+  },
+  computed: {
+    filterComments: function () {
+      return this.comments.filter((comment) => {
+        return comment.name.match(this.search)
+      })
+    }
   }
 }
 </script>
