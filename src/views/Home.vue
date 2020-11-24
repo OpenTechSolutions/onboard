@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Hero v-bind:titles="titles" />
+    <Hero v-bind:titles="titles" id="bgImg" />
     <div class="container m-auto p-5 bg-gray-700">
       <input type="text" placeholder="Search Name... " v-model="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
     </div>
@@ -17,9 +17,6 @@
           <th class="border">
             Body
           </th>
-          <th class="border w-36">
-          Action
-          </th>
         </tr>
       </thead>
       <tbody v-for="comment in filterComments" v-bind:key="comment.id">
@@ -27,9 +24,6 @@
           <td class="border">{{comment.name}}</td>
           <td class="border">{{comment.email}}</td>
           <td class="border" id="">{{comment.body}}</td>
-          <td class="border">
-            <router-link to='' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Read More</router-link>
-          </td>
           </tr>
       </tbody>
     </table>
@@ -67,3 +61,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  #bgImg{
+    background-image: url('../assets/img/1.jpg');
+    background-size: cover;
+  }
+</style>

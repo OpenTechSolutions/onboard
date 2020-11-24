@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-300 h-72">
+    <div class="bg-gray-300 h-72" :id=bgImg>
       <h1 class="text-3xl font-bold pt-20">{{titles}}</h1>
     </div>
 </template>

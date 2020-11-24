@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <Hero v-bind:title="title" />
+    <Hero v-bind:title="title" id="bgImg" />
     <div class="container m-auto my-10">
     <project-card v-bind:projects="projects"/>
     </div>
@@ -30,3 +30,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  #bgImg{
+    background-image: url('../assets/img/3.jpg');
+    background-size: cover;
+  }
+</style>

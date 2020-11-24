@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero v-bind:title="title" />
+    <Hero v-bind:title="title" id="bgImg" />
     <ContactForm />
   </div>
 </template>
@@ -22,3 +22,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  #bgImg{
+    background-image: url('../assets/img/2.jpg');
+    background-size: cover;
+  }
+</style>
