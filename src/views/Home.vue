@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Hero v-bind:title="title" />
+    <Hero v-bind:titles="titles" />
     <div class="container m-auto p-5 bg-gray-700">
       <input type="text" placeholder="Search Name... " v-model="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
     </div>
@@ -43,7 +43,7 @@ export default {
   },
   data () {
     return {
-      title: 'Maurice Project Landing Page',
+      titles: 'Maurice Project Landing Page',
       comments: [],
       search: ''
     }
