@@ -1,16 +1,19 @@
 <template>
-    <div>
-        <Hero v-bind:title="title" />
-        This is a Contact page
-    </div>
+  <div>
+    <Hero v-bind:title="title" />
+    <ContactForm />
+  </div>
 </template>
 
 <script>
 import Hero from '@/components/Hero.vue'
+import ContactForm from '@/components/ContactForm'
+
 export default {
   name: 'Contact',
   components: {
-    Hero
+    Hero,
+    ContactForm
   },
   data () {
     return {

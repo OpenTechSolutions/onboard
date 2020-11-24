@@ -2,7 +2,7 @@
   <div class="home">
     <Hero v-bind:title="title" />
     <div class="container m-auto p-5 bg-gray-700">
-      <input type="text" placeholder="Enter Search... " v-model="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+      <input type="text" placeholder="Search Name... " v-model="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
     </div>
     <div class="container m-auto my-10">
     <table class="table-auto border">
