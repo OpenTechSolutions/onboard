@@ -23,7 +23,7 @@
           <tr>
           <td class="border">{{comment.name}}</td>
           <td class="border">{{comment.email}}</td>
-          <td class="border">{{comment.body}}</td>
+          <td class="border" id="">{{comment.body}}</td>
           </tr>
       </tbody>
     </table>
