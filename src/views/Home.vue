@@ -4,7 +4,7 @@
     <div class="container m-auto p-5 bg-gray-700">
       <input type="text" placeholder="Search Name... " v-model="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
     </div>
-    <div class="container m-auto my-10">
+    <div class="container m-auto my-10 overflow-scroll w-11/12 md:w-auto">
     <table class="table-auto border">
       <thead>
         <tr>
